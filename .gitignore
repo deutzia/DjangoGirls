@@ -1,0 +1,7 @@
+*.pyc
+__pycache__
+django
+db.sqlite3
+.DS_Store
+pip-selfcheck.json
+pyvenv.cfg
