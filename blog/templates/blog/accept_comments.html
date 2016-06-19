@@ -14,7 +14,8 @@
 					Author: {{ comment.author }} <br />
 					{{ comment.text|linebreaks }}
 				</div>
-				<input type="checkbox" name="comment{{comment.pk}}" />
+				<input type="checkbox" name="comment{{comment.pk}}" />Add <br />
+				<input type="checkbox" name="delete{{comment.pk}}" />Delete <br />
 			</div>
 		{% endfor %}
 		<button type="submit" class="save btn btn-default">Save changes</button>

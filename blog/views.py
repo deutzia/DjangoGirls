@@ -59,6 +59,11 @@ def accept_comments(request):
 				comment = Comment.objects.get(pk=int(key.lstrip('comment')))
 				comment.published = True
 				comment.save()
+		for key in request.POST:
+			if key.startswith('delete'):
+				comment = Comment.objects.get(pk=int(key.lstrip('delete')))
+				if not comment.published:
+					comment.delete()
 		return redirect('post_list')
 	new_comments = Comment.objects.filter(published=False).order_by('date')
 	return render(request, 'blog/accept_comments.html', {'comments': new_comments})
