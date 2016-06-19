@@ -1,6 +1,6 @@
 *.pyc
 __pycache__
-django
+venvdjango
 db.sqlite3
 .DS_Store
 pip-selfcheck.json
