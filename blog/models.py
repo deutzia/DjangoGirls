@@ -15,3 +15,18 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.title
+
+class Comment(models.Model):
+	author = models.CharField(max_length=50)
+	email = models.CharField(max_length=100)
+	text = models.TextField()
+	date = models.DateTimeField(default=timezone.now)
+	commented_post = models.ForeignKey(Post, null=True)
+	published = models.BooleanField(default=False)
+
+	def publish(self):
+		self.date = timezone.now()
+		self.save()
+
+	def __str__(self):
+		return self.text

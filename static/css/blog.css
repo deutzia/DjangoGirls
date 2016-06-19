@@ -63,3 +63,11 @@ h1, h2, h3, h4 {
 #Dates {
     float: right;
 }
+
+#AcceptCommentsButton {
+    top: -60px;
+}
+
+.comment-form textarea, .post-form input {
+    width: 100%;
+}
